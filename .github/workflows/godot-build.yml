@@ -1,0 +1,46 @@
+name: "Build game release"
+
+on: 
+  release:
+    types:
+      - published
+
+jobs:
+  build:
+    name: "Build game"
+    runs-on: ubuntu-latest
+    container:
+      image: "barichello/godot-ci:3.4.4"
+
+    strategy:
+      matrix:
+        target:
+          - "Windows"
+          - "MacOSX"
+          - "LinuxX11"
+          - "HTML5"
+
+    steps:
+      - name: "⬇️ Checkout repository"
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: "⚙️ Setup Godot templates"
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/3.4.4.stable ~/.local/share/godot/templates/3.4.4.stable
+      
+      - name: "⚙️ Setup Godot build directories"
+        run: |
+          mkdir -v -p export/${{ matrix.target }}/LD50/
+          
+      - name: "🏗️ Build game"
+        run: |
+          godot -v --export "${{ matrix.target }}"
+
+      - name: "⬆️ Upload artifact"
+        uses: actions/upload-artifact@v1
+        with:
+          name: "${{ matrix.target }}"
+          path: "export/${{ matrix.target }}"
