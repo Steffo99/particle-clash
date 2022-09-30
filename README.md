@@ -2,7 +2,7 @@
 
 _unknown tagline_
 
-## Ludum Dare 50: _category_ entry
+## Ludum Dare 51: Compo entry
 
 [![Overall: TBD](https://img.shields.io/badge/overall-TBD-lightgrey) 
 ![Fun: TBD](https://img.shields.io/badge/fun-TBD-lightgrey) 
@@ -17,11 +17,11 @@ _unknown tagline_
 
 ### Game
 
-- Your name goes here!
+- Stefano Pigozzi (@Steffo)
 
 ### Tools
 
-- [Godot Engine `3.4.4`](https://godotengine.org/)
+- [Godot Engine `3.5.1`](https://godotengine.org/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 	- [`geequlim.godot-tools` extension](https://marketplace.visualstudio.com/items?itemName=geequlim.godot-tools)
 	- [`ms-vsliveshare.vsliveshare` extension](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare)
