@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scenes/Play Area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/scenes/Minimap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scenes/Timer.tscn" type="PackedScene" id=5]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -31,8 +32,7 @@ modulate = Color( 0, 1, 0.658824, 1 )
 [node name="Atom" parent="Minimap" index="0"]
 modulate = Color( 0, 1, 0.658824, 1 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+[node name="Timer" parent="." instance=ExtResource( 5 )]
 
 [editable path="Play Area"]
 [editable path="Minimap"]
