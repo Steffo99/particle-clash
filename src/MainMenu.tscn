@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/scenes/Play Area.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/scenes/Minimap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/scenes/Timer.tscn" type="PackedScene" id=5]
 
 [node name="MainMenu" type="Node2D"]
@@ -13,32 +12,14 @@ script = ExtResource( 1 )
 modulate = Color( 0, 0.31, 0, 1 )
 
 [node name="Left Play Area" parent="." instance=ExtResource( 3 )]
-modulate = Color( 1, 0.7, 0.7, 1 )
 position = Vector2( 400, 450 )
 player = "p1"
 
-[node name="Spinner" parent="Left Play Area/Tiles" index="0"]
-modulate = Color( 1, 0.5, 0.5, 1 )
-
 [node name="Right Play Area" parent="." instance=ExtResource( 3 )]
-modulate = Color( 0.7, 0.7, 1, 1 )
 position = Vector2( 1200, 450 )
 player = "p2"
-
-[node name="Spinner" parent="Right Play Area/Tiles" index="0"]
-modulate = Color( 0.5, 0.5, 1, 1 )
-
-[node name="Minimap" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 16 )
-
-[node name="Atom" parent="Minimap" index="0"]
-modulate = Color( 1, 0.7, 0.7, 1 )
-
-[node name="Atom2" parent="Minimap" index="1"]
-modulate = Color( 0.7, 0.7, 1, 1 )
 
 [node name="Timer" parent="." instance=ExtResource( 5 )]
 
 [editable path="Left Play Area"]
 [editable path="Right Play Area"]
-[editable path="Minimap"]

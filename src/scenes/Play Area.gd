@@ -1,18 +1,26 @@
 extends Sprite
 
 
-const TILE_SIZE = 86
+func tiles_init():
+	$Tiles.set_shape([
+		" RRBB ",
+		"RRBRBB",
+		"RBRBRB",
+		"BRBRBR",
+		"BBRBRR",
+		" BBRR "
+	])
+	check_matches()
+
 
 var cursor_pos setget set_cursor_pos
 func set_cursor_pos(val):
-	var shape = $Tiles.shape
-	#warning-ignore:integer_division
-	var offset_x = len(shape) / 2 - 1
-	#warning-ignore:integer_division
-	var offset_y = len(shape[0]) / 2 - 1
-	$Tiles/Spinner.position = Vector2((val.x - offset_x) * TILE_SIZE, (val.y - offset_y) * TILE_SIZE)
+	var offset = $Tiles.size / 2
+	$Tiles/Cursor.position = Vector2( \
+		(val.x - offset) * $Tiles.TILE_SIZE + 43, \
+		(val.y - offset) * $Tiles.TILE_SIZE + 43  \
+	)
 	cursor_pos = val
-
 
 func cursor_would_collide(top_left: Vector2):
 	var shape = $Tiles.shape
@@ -63,7 +71,81 @@ func cursor_move(dest):
 		print("Cursor collided @ %d, %d" % [dest.x, dest.y])
 
 func cursor_rotate():
-	pass
+	var top_left = $Tiles.atoms[cursor_pos.y][cursor_pos.x]
+	var top_right = $Tiles.atoms[cursor_pos.y][cursor_pos.x+1]
+	var bottom_left = $Tiles.atoms[cursor_pos.y+1][cursor_pos.x]
+	var bottom_right = $Tiles.atoms[cursor_pos.y+1][cursor_pos.x+1]
+	
+	var tmp = top_left.position
+	top_left.position = top_right.position
+	top_right.position = bottom_right.position
+	bottom_right.position = bottom_left.position
+	bottom_left.position = tmp
+	
+	$Tiles.atoms[cursor_pos.y][cursor_pos.x] = bottom_left
+	$Tiles.atoms[cursor_pos.y][cursor_pos.x+1] = top_left
+	$Tiles.atoms[cursor_pos.y+1][cursor_pos.x+1] = top_right
+	$Tiles.atoms[cursor_pos.y+1][cursor_pos.x] = bottom_right
+
+	# Optimizable
+	check_matches()
+
+
+func check_matches():
+	# Horizontally
+	var size = $Tiles.size
+
+	for row in $Tiles.atoms:
+		for col in row:
+			if col == null:
+				continue
+			col.linked = false
+
+	for row in $Tiles.atoms:
+		var x = 0
+		while x < size - 3:
+			var a1 = row[x]
+			var a2 = row[x+1]
+			var a3 = row[x+2]
+			var a4 = row[x+3]
+			x += 1
+			if a1 == null || a2 == null || a3 == null || a4 == null:
+				continue
+			if a1.self_modulate == a2.self_modulate && a2.self_modulate == a3.self_modulate && a3.self_modulate == a4.self_modulate:
+				a1.linked = true
+				a2.linked = true
+				a3.linked = true
+				a4.linked = true
+
+	var y = 0
+	while y < size - 3:
+		var x = 0
+		while x < size:
+			var a1 = $Tiles.atoms[y][x]
+			var a2 = $Tiles.atoms[y+1][x]
+			var a3 = $Tiles.atoms[y+2][x]
+			var a4 = $Tiles.atoms[y+3][x]
+			x += 1
+			if a1 == null || a2 == null || a3 == null || a4 == null:
+				continue
+			if a1.self_modulate == a2.self_modulate && a2.self_modulate == a3.self_modulate && a3.self_modulate == a4.self_modulate:
+				a1.linked = true
+				a2.linked = true
+				a3.linked = true
+				a4.linked = true
+		y += 1
+
+	var score = 0
+
+	for row in $Tiles.atoms:
+		for col in row:
+			if col == null:
+				continue
+			if col.linked:
+				score += 1
+
+	$Label.text = "%d" % score
+
 
 
 export(String) var player
@@ -82,4 +164,5 @@ func _process(_delta):
 
 
 func _ready():
+	tiles_init()
 	cursor_init()

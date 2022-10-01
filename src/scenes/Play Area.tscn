@@ -33,5 +33,6 @@ valign = 2
 
 [node name="Tiles" parent="." instance=ExtResource( 6 )]
 
-[node name="Spinner" type="Sprite" parent="Tiles"]
+[node name="Cursor" type="Sprite" parent="Tiles"]
+position = Vector2( -43, -43 )
 texture = ExtResource( 4 )
