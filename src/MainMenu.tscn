@@ -10,29 +10,35 @@
 script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
-modulate = Color( 0, 0.294118, 0.196078, 1 )
+modulate = Color( 0, 0.31, 0, 1 )
 
-[node name="Play Area" parent="." instance=ExtResource( 3 )]
-self_modulate = Color( 0, 0.34902, 0.329412, 1 )
+[node name="Left Play Area" parent="." instance=ExtResource( 3 )]
+modulate = Color( 1, 0.7, 0.7, 1 )
+position = Vector2( 400, 450 )
+player = "p1"
 
-[node name="Tiles" parent="Play Area" index="0"]
-self_modulate = Color( 0, 0.34902, 0.329412, 1 )
+[node name="Spinner" parent="Left Play Area/Tiles" index="0"]
+modulate = Color( 1, 0.5, 0.5, 1 )
 
-[node name="Atom" parent="Play Area/Atoms" index="0"]
-modulate = Color( 0, 1, 1, 1 )
+[node name="Right Play Area" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.7, 0.7, 1, 1 )
+position = Vector2( 1200, 450 )
+player = "p2"
 
-[node name="Spinner" parent="Play Area" index="2"]
-modulate = Color( 0, 1, 0.658824, 1 )
-
-[node name="Label" parent="Play Area" index="3"]
-modulate = Color( 0, 1, 0.658824, 1 )
+[node name="Spinner" parent="Right Play Area/Tiles" index="0"]
+modulate = Color( 0.5, 0.5, 1, 1 )
 
 [node name="Minimap" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 16 )
 
 [node name="Atom" parent="Minimap" index="0"]
-modulate = Color( 0, 1, 0.658824, 1 )
+modulate = Color( 1, 0.7, 0.7, 1 )
+
+[node name="Atom2" parent="Minimap" index="1"]
+modulate = Color( 0.7, 0.7, 1, 1 )
 
 [node name="Timer" parent="." instance=ExtResource( 5 )]
 
-[editable path="Play Area"]
+[editable path="Left Play Area"]
+[editable path="Right Play Area"]
 [editable path="Minimap"]
