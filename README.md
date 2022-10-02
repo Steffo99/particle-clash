@@ -1,6 +1,6 @@
-# _untitled project_
+# Particle Clash
 
-_unknown tagline_
+_A match-4 game for two players about particles about to collide_
 
 ## Ludum Dare 51: Compo entry
 
@@ -11,26 +11,32 @@ _unknown tagline_
 ![Graphics: TBD](https://img.shields.io/badge/graphics-TBD-lightgrey) 
 ![Audio: TBD](https://img.shields.io/badge/audio-TBD-lightgrey) 
 ![Humor: TBD](https://img.shields.io/badge/humor-TBD-lightgrey)
-![Mood: TBD](https://img.shields.io/badge/mood-TBD-lightgrey)](YOUR-GAME-URL-HERE)
+![Mood: TBD](https://img.shields.io/badge/mood-TBD-lightgrey)](https://ldjam.com/events/ludum-dare/51/$303236/)
+
+## About
+
+TODO
 
 ## Credits
 
 ### Game
 
-- Stefano Pigozzi (@Steffo)
+- Stefano Pigozzi (@Steffo99)
 
 ### Tools
 
-- [Godot Engine `3.5.1`](https://godotengine.org/)
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [⚙️ Godot Engine `3.5.1`](https://godotengine.org/)
+- [💻 Visual Studio Code](https://code.visualstudio.com/)
 	- [`geequlim.godot-tools` extension](https://marketplace.visualstudio.com/items?itemName=geequlim.godot-tools)
 	- [`ms-vsliveshare.vsliveshare` extension](https://marketplace.visualstudio.com/items?itemName=ms-vsliveshare.vsliveshare)
-- [`Steffo99/template-godot-ld50` template](https://github.com/Steffo99/template-godot-ld50)
-- [Git](https://git-scm.com/)
+- [✏️ GIMP `2.10.32`](https://www.gimp.org/)
+- [🎵 REAPER `6.61`](https://www.reaper.fm/)
+- [🏗️ Git](https://git-scm.com/)
 	- [Git Large File Storage extension](https://git-lfs.github.com/)
-- [GitHub](https://github.com/)
+- [🏗️ GitHub](https://github.com/)
 	- [GitHub Actions](https://github.com/features/actions)
 		- [`abarichello/godot-ci` action](https://github.com/marketplace/actions/godot-ci)
+- [🏗️ `Steffo99/template-godot-ld50` template](https://github.com/Steffo99/template-godot-ld50)
 
 ## Development
 
@@ -75,7 +81,7 @@ Before you commit a large binary file (such as an image, or an audio file):
 To trigger an automatic export of the project:
 
 1. Ensure GitHub Actions are enabled
-1. Create a new GitHub Release
+1. Push a new tag with formatted as `vX.Y.Z`
 
 To download the resulting builds:
 
