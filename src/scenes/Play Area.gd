@@ -1,11 +1,11 @@
 extends Sprite
 
 
-var can_act = true
+var can_act = false
 
 
-func tiles_init(shape):
-	$Tiles.set_shape(shape)
+func tiles_init(shape, sd):
+	$Tiles.set_shape(shape, sd)
 	check_matches()
 
 
@@ -87,8 +87,15 @@ func cursor_rotate():
 		$Tiles.atoms[cursor_pos.y+1][cursor_pos.x] = bottom_right
 
 		# Optimizable
-		check_matches()
+		var old_score = score
+		var new_score = check_matches()
+		if new_score > old_score:
+			$Tiles/Cursor/SoundOk.play()
+		else:
+			$Tiles/Cursor/SoundMove.play()
 
+
+var score
 
 func check_matches():
 	# Horizontally
@@ -134,8 +141,7 @@ func check_matches():
 				a4.linked = true
 		y += 1
 
-	var score = 0
-
+	score = 0
 	for row in $Tiles.atoms:
 		for col in row:
 			if col == null:
@@ -145,6 +151,7 @@ func check_matches():
 
 	$Label.text = "%d" % score
 
+	return score
 
 
 export(String) var player

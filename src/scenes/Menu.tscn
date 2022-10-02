@@ -31,7 +31,7 @@ margin_top = 528.0
 margin_right = 3200.0
 margin_bottom = 586.0
 custom_fonts/font = SubResource( 3 )
-text = "Atomic Clash"
+text = "Particle Clash"
 align = 1
 
 [node name="Title2" type="Label" parent="VBoxContainer"]
