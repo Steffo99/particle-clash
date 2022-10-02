@@ -17,6 +17,9 @@ self_modulate = Color( 1, 0.701961, 0.701961, 1 )
 position = Vector2( 400, 450 )
 player = "p1"
 
+[node name="Label" parent="LeftPlayArea" index="0"]
+self_modulate = Color( 1, 0.7, 0.7, 1 )
+
 [node name="Tiles" parent="LeftPlayArea" index="1"]
 visible = true
 self_modulate = Color( 1, 0.701961, 0.701961, 1 )
@@ -25,6 +28,9 @@ self_modulate = Color( 1, 0.701961, 0.701961, 1 )
 self_modulate = Color( 0.701961, 0.701961, 1, 1 )
 position = Vector2( 1200, 450 )
 player = "p2"
+
+[node name="Label" parent="RightPlayArea" index="0"]
+self_modulate = Color( 0.7, 0.7, 1, 1 )
 
 [node name="Tiles" parent="RightPlayArea" index="1"]
 visible = true

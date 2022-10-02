@@ -19,19 +19,18 @@ func set_cursor_pos(val):
 	)
 	cursor_pos = val
 
-func cursor_would_collide(top_left: Vector2):
+func cursor_would_collide(dest: Vector2):
 	var shape = $Tiles.shape
-	var size_x = len(shape) - 1
-	var size_y = len(shape[0]) - 1
+	var size = len(shape)
 	return \
-		top_left.x < 0 || \
-		top_left.y < 0 || \
-		top_left.x >= size_x || \
-		top_left.y >= size_y || \
-		shape[top_left.x][top_left.y] == " " || \
-		shape[top_left.x+1][top_left.y] == " " || \
-		shape[top_left.x][top_left.y+1] == " " || \
-		shape[top_left.x+1][top_left.y+1] == " "
+		dest.x < 0 || \
+		dest.y < 0 || \
+		dest.x > size - 2 || \
+		dest.y > size - 2 || \
+		shape[dest.y][dest.x] == " " || \
+		shape[dest.y+1][dest.x] == " " || \
+		shape[dest.y][dest.x+1] == " " || \
+		shape[dest.y+1][dest.x+1] == " "
 
 func cursor_init():
 	var shape = $Tiles.shape

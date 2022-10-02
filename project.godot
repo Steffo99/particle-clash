@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Particle Clash"
+config/description="[LD51 Compo] A match-4 game about particles about to collide."
 run/main_scene="res://src/Main.tscn"
 boot_splash/show_image=false
 config/icon="res://src/sprites/atom.png"
