@@ -27,28 +27,35 @@ anchor_bottom = 1.0
 alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
-margin_top = 95.0
-margin_right = 1600.0
-margin_bottom = 153.0
+margin_top = 528.0
+margin_right = 3200.0
+margin_bottom = 586.0
 custom_fonts/font = SubResource( 3 )
 text = "Atomic Clash"
 align = 1
 
+[node name="Title2" type="Label" parent="VBoxContainer"]
+margin_top = 590.0
+margin_right = 3200.0
+margin_bottom = 620.0
+text = "Pick your (preferably light) colors!"
+align = 1
+
 [node name="Padding" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 157.0
-margin_right = 1600.0
-margin_bottom = 197.0
+margin_top = 624.0
+margin_right = 3200.0
+margin_bottom = 664.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="Colors" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 201.0
-margin_right = 1600.0
-margin_bottom = 709.0
+margin_top = 668.0
+margin_right = 3200.0
+margin_bottom = 1176.0
 alignment = 1
 
 [node name="Left Player" type="VBoxContainer" parent="VBoxContainer/Colors"]
-margin_left = 304.0
-margin_right = 724.0
+margin_left = 1104.0
+margin_right = 1524.0
 margin_bottom = 508.0
 alignment = 1
 
@@ -58,10 +65,9 @@ margin_bottom = 30.0
 text = "Left Player [WASD + Space]"
 
 [node name="ColorPicker" type="ColorPicker" parent="VBoxContainer/Colors/Left Player"]
-margin_left = 4.0
-margin_top = 38.0
-margin_right = 424.0
-margin_bottom = 512.0
+margin_top = 34.0
+margin_right = 420.0
+margin_bottom = 508.0
 color = Color( 1, 0.7, 0.7, 1 )
 edit_alpha = false
 hsv_mode = true
@@ -69,8 +75,8 @@ presets_enabled = false
 presets_visible = false
 
 [node name="Vs" type="VBoxContainer" parent="VBoxContainer/Colors"]
-margin_left = 728.0
-margin_right = 872.0
+margin_left = 1528.0
+margin_right = 1672.0
 margin_bottom = 508.0
 rect_min_size = Vector2( 144, 0 )
 alignment = 1
@@ -84,8 +90,8 @@ align = 1
 valign = 1
 
 [node name="Right Player" type="VBoxContainer" parent="VBoxContainer/Colors"]
-margin_left = 876.0
-margin_right = 1296.0
+margin_left = 1676.0
+margin_right = 2096.0
 margin_bottom = 508.0
 alignment = 1
 
@@ -96,10 +102,9 @@ text = "[↑←↓→ + Enter] Right Player"
 align = 2
 
 [node name="ColorPicker" type="ColorPicker" parent="VBoxContainer/Colors/Right Player"]
-margin_left = 4.0
-margin_top = 38.0
-margin_right = 424.0
-margin_bottom = 512.0
+margin_top = 34.0
+margin_right = 420.0
+margin_bottom = 508.0
 color = Color( 0.7, 0.7, 1, 1 )
 edit_alpha = false
 hsv_mode = true
@@ -107,16 +112,16 @@ presets_enabled = false
 presets_visible = false
 
 [node name="Padding2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 713.0
-margin_right = 1600.0
-margin_bottom = 753.0
+margin_top = 1180.0
+margin_right = 3200.0
+margin_bottom = 1220.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="Button" type="Button" parent="VBoxContainer"]
-margin_left = 720.0
-margin_top = 757.0
-margin_right = 880.0
-margin_bottom = 805.0
+margin_left = 1520.0
+margin_top = 1224.0
+margin_right = 1680.0
+margin_bottom = 1272.0
 rect_min_size = Vector2( 160, 48 )
 size_flags_horizontal = 4
 text = "Start!"

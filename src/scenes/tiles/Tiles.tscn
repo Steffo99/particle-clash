@@ -6,7 +6,7 @@
 [sub_resource type="TileSet" id=1]
 0/name = "grid-tile.png 0"
 0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( -43, -43 )
+0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 85, 85 )
 0/tile_mode = 0
@@ -20,7 +20,7 @@
 0/z_index = 0
 
 [node name="Tiles" type="TileMap"]
-position = Vector2( 43, 43 )
+visible = false
 tile_set = SubResource( 1 )
 cell_size = Vector2( 86, 86 )
 cell_tile_origin = 1

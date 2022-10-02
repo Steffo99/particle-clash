@@ -35,7 +35,7 @@ func set_shape(val):
 				set_cell(x, y, 0)
 				var atom = ATOM.instance()
 				atom.self_modulate = COLORS[col]
-				atom.position = Vector2(x * TILE_SIZE, y * TILE_SIZE)
+				atom.position = Vector2(x * TILE_SIZE + TILE_SIZE / 2, y * TILE_SIZE + TILE_SIZE / 2)
 				add_child(atom)
 				atoms_row.append(atom)
 			else:

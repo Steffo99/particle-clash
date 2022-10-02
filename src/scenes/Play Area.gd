@@ -1,24 +1,20 @@
 extends Sprite
 
 
-func tiles_init():
-	$Tiles.set_shape([
-		" RRBB ",
-		"RRBRBB",
-		"RBRBRB",
-		"BRBRBR",
-		"BBRBRR",
-		" BBRR "
-	])
+var can_act = true
+
+
+func tiles_init(shape):
+	$Tiles.set_shape(shape)
 	check_matches()
 
 
 var cursor_pos setget set_cursor_pos
 func set_cursor_pos(val):
-	var offset = $Tiles.size / 2
+	var offset = $Tiles.size / 2 - 1
 	$Tiles/Cursor.position = Vector2( \
-		(val.x - offset) * $Tiles.TILE_SIZE + 43, \
-		(val.y - offset) * $Tiles.TILE_SIZE + 43  \
+		(val.x - offset) * $Tiles.TILE_SIZE, \
+		(val.y - offset) * $Tiles.TILE_SIZE  \
 	)
 	cursor_pos = val
 
@@ -53,42 +49,45 @@ func cursor_init():
 	get_tree().quit()
 
 func cursor_up():
-	cursor_move(Vector2(cursor_pos.x, cursor_pos.y - 1))
+	if can_act:
+		cursor_move(Vector2(cursor_pos.x, cursor_pos.y - 1))
 
 func cursor_right():
-	cursor_move(Vector2(cursor_pos.x + 1, cursor_pos.y))
+	if can_act:
+		cursor_move(Vector2(cursor_pos.x + 1, cursor_pos.y))
 
 func cursor_down():
-	cursor_move(Vector2(cursor_pos.x, cursor_pos.y + 1))
+	if can_act:
+		cursor_move(Vector2(cursor_pos.x, cursor_pos.y + 1))
 
 func cursor_left():
-	cursor_move(Vector2(cursor_pos.x - 1, cursor_pos.y))
+	if can_act:
+		cursor_move(Vector2(cursor_pos.x - 1, cursor_pos.y))
 
 func cursor_move(dest):
 	if not cursor_would_collide(dest):
 		set_cursor_pos(dest)
-	else:
-		print("Cursor collided @ %d, %d" % [dest.x, dest.y])
 
 func cursor_rotate():
-	var top_left = $Tiles.atoms[cursor_pos.y][cursor_pos.x]
-	var top_right = $Tiles.atoms[cursor_pos.y][cursor_pos.x+1]
-	var bottom_left = $Tiles.atoms[cursor_pos.y+1][cursor_pos.x]
-	var bottom_right = $Tiles.atoms[cursor_pos.y+1][cursor_pos.x+1]
-	
-	var tmp = top_left.position
-	top_left.position = top_right.position
-	top_right.position = bottom_right.position
-	bottom_right.position = bottom_left.position
-	bottom_left.position = tmp
-	
-	$Tiles.atoms[cursor_pos.y][cursor_pos.x] = bottom_left
-	$Tiles.atoms[cursor_pos.y][cursor_pos.x+1] = top_left
-	$Tiles.atoms[cursor_pos.y+1][cursor_pos.x+1] = top_right
-	$Tiles.atoms[cursor_pos.y+1][cursor_pos.x] = bottom_right
+	if can_act:
+		var top_left = $Tiles.atoms[cursor_pos.y][cursor_pos.x]
+		var top_right = $Tiles.atoms[cursor_pos.y][cursor_pos.x+1]
+		var bottom_left = $Tiles.atoms[cursor_pos.y+1][cursor_pos.x]
+		var bottom_right = $Tiles.atoms[cursor_pos.y+1][cursor_pos.x+1]
+		
+		var tmp = top_left.position
+		top_left.position = top_right.position
+		top_right.position = bottom_right.position
+		bottom_right.position = bottom_left.position
+		bottom_left.position = tmp
+		
+		$Tiles.atoms[cursor_pos.y][cursor_pos.x] = bottom_left
+		$Tiles.atoms[cursor_pos.y][cursor_pos.x+1] = top_left
+		$Tiles.atoms[cursor_pos.y+1][cursor_pos.x+1] = top_right
+		$Tiles.atoms[cursor_pos.y+1][cursor_pos.x] = bottom_right
 
-	# Optimizable
-	check_matches()
+		# Optimizable
+		check_matches()
 
 
 func check_matches():
