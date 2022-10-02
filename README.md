@@ -19,7 +19,7 @@ Two particles will collide **every 10 seconds**, and only one of them may surviv
 
 **Twist** the matter inside to create colored lines of **4 or more subparticles of the same color** to strengthen your particle, and prepare for the crash: the strongest particle wins the round!
 
-## Requirements
+### Requirements
 
 This game requires:
 
@@ -31,19 +31,19 @@ This game requires:
 
 ![Screenshot of the first level with the default colors](media/screenshot-1.png "Screenshot of the first level with the default colors")
 
-## Controls
+### Controls
 
-### Player 1
+#### Player 1
 
 - \[**W**\] \[**A**\] \[**S**\] \[**D**\] - Move
 - \[**Space**\] - Rotate clockwise
 
-### Player 2
+#### Player 2
 
 - \[**↑**\] \[**←**\] \[**↓**\] \[**→**\] - Move
 - \[**Enter**\] - Rotate clockwise
 
-### Common
+#### Common
 
 - **Mouse** - Select options on the menu
 - **`M`** - Mute music
