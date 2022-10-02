@@ -22,155 +22,162 @@ func _on_RightColorPicker_color_changed(color: Color):
 
 
 const SHAPES = [
-#	# Good intro level
-#	[
-#		" RRBB ",
-#		"RRBRBB",
-#		"RBRBRB",
-#		"BRBRBR",
-#		"BBRBRR",
-#		" BBRR "
-#	],
-#	# With a trick
-#	[
-#		" RBBR ",
-#		"RBRRBR",
-#		"BRWWRB",
-#		"BRWWRB",
-#		"RBRRBR",
-#		" RBBR "
-#	],
-#	# The Gap
-#	[
-#		" RRBB ",
-#		"RBBRRB",
-#		"BRRBBR",
-#		"RBB RB",
-#		"BRRBBR",
-#		" BBRR "
-#	],
-#	# Larger
-#	[
-#		"  GGBB  ",
-#		" GRRYYB ",
-#		"GRRRYYYB",
-#		"GRRRYYYB",
-#		"YBBBGGGR",
-#		"YBBBGGGR",
-#		" YBBGGR ",
-#		"  YYRR  "
-#	],
-#	# Donut
-#	[
-#		"  RBBR  ",
-#		" RBRRBR ",
-#		"RBRBBRBR",
-#		"BRB  BRB",
-#		"BRB  BRB",
-#		"RBRBBRBR",
-#		" RBRRBR ",
-#		"  RBBR  "
-#	],
-#	# Huge
-#	[
-#		"  BBBRRR  ",
-#		" 22222222 ",
-#		"R22222222B",
-#		"R222 2222B",
-#		"R222222 2B",
-#		"B2 222222R",
-#		"B2222 222R",
-#		"B22222222R",
-#		" 22222222 ",
-#		"  RRRBBB  "
-#	]
+	# Tutorial
+	[
+		"RWRR",
+		"RWWW",
+		"YBBY",
+		"YBBY",
+	],
+	# Good intro level
+	[
+		" RRBB ",
+		"RRBRBB",
+		"RBRBRB",
+		"BRBRBR",
+		"BBRBRR",
+		" BBRR "
+	],
+	# With a trick
+	[
+		" RBBR ",
+		"RBRRBR",
+		"BRWWRB",
+		"BRWWRB",
+		"RBRRBR",
+		" RBBR "
+	],
+	# The Gap
+	[
+		" RRBB ",
+		"RBBRRB",
+		"BRRBBR",
+		"RBB RB",
+		"BRRBBR",
+		" BBRR "
+	],
+	# Larger
+	[
+		"  GGBB  ",
+		" GRRYYB ",
+		"GRRRYYYB",
+		"GRRRYYYB",
+		"YBBBGGGR",
+		"YBBBGGGR",
+		" YBBGGR ",
+		"  YYRR  "
+	],
+	# Donut
+	[
+		"  RBBR  ",
+		" RBRRBR ",
+		"RBRBBRBR",
+		"BRB  BRB",
+		"BRB  BRB",
+		"RBRBBRBR",
+		" RBRRBR ",
+		"  RBBR  "
+	],
+	# Huge
+	[
+		"  BBBRRR  ",
+		" 22222222 ",
+		"R22222222B",
+		"R222 2222B",
+		"R222222 2B",
+		"B2 222222R",
+		"B2222 222R",
+		"B22222222R",
+		" 22222222 ",
+		"  RRRBBB  "
+	]
 ]
 
 const RANDOM_SHAPES = [
-#	# Smol 2
-#	[
-#		" 2222 ",
-#		"222222",
-#		"222222",
-#		"222222",
-#		"222222",
-#		" 2222 ",
-#	],
-#	# Smol 3
-#	[
-#		" 3333 ",
-#		"333333",
-#		"333333",
-#		"333333",
-#		"333333",
-#		" 3333 ",
-#	],
-#	# Smol 4
-#	[
-#		" 4444 ",
-#		"444444",
-#		"444444",
-#		"444444",
-#		"444444",
-#		" 4444 ",
-#	],
-#	# Larger 3
-#	[
-#		"  3333  ",
-#		" 333333 ",
-#		"33333333",
-#		"33333333",
-#		"33333333",
-#		"33333333",
-#		" 333333 ",
-#		"  3333  "
-#	],
-#	# Larger 4
-#	[
-#		"  4444  ",
-#		" 444444 ",
-#		"44444444",
-#		"44444444",
-#		"44444444",
-#		"44444444",
-#		" 444444 ",
-#		"  4444  "
-#	],
-#	# Larger 5
-#	[
-#		"  5555  ",
-#		" 555555 ",
-#		"55555555",
-#		"55555555",
-#		"55555555",
-#		"55555555",
-#		" 555555 ",
-#		"  5555  "
-#	],
-#	# Donut 3
-#	[
-#		"  3333  ",
-#		" 333333 ",
-#		"33333333",
-#		"333  333",
-#		"333  333",
-#		"33333333",
-#		" 333333 ",
-#		"  3333  "
-#	],
-#	# Huge mix
-#	[
-#		"   2222   ",
-#		"  233332  ",
-#		" 23555532 ",
-#		"2355555532",
-#		"2355555532",
-#		"2355555532",
-#		"2355555532",
-#		" 23555532 ",
-#		"  233332  ",
-#		"   2222   "
-#	],
+	# Smol 2
+	[
+		" 2222 ",
+		"222222",
+		"222222",
+		"222222",
+		"222222",
+		" 2222 ",
+	],
+	# Smol 3
+	[
+		" 3333 ",
+		"333333",
+		"333333",
+		"333333",
+		"333333",
+		" 3333 ",
+	],
+	# Smol 4
+	[
+		" 4444 ",
+		"444444",
+		"444444",
+		"444444",
+		"444444",
+		" 4444 ",
+	],
+	# Larger 3
+	[
+		"  3333  ",
+		" 333333 ",
+		"33333333",
+		"33333333",
+		"33333333",
+		"33333333",
+		" 333333 ",
+		"  3333  "
+	],
+	# Larger 4
+	[
+		"  4444  ",
+		" 444444 ",
+		"44444444",
+		"44444444",
+		"44444444",
+		"44444444",
+		" 444444 ",
+		"  4444  "
+	],
+	# Larger 5
+	[
+		"  5555  ",
+		" 555555 ",
+		"55555555",
+		"55555555",
+		"55555555",
+		"55555555",
+		" 555555 ",
+		"  5555  "
+	],
+	# Donut 3
+	[
+		"  3333  ",
+		" 333333 ",
+		"33333333",
+		"333  333",
+		"333  333",
+		"33333333",
+		" 333333 ",
+		"  3333  "
+	],
+	# Huge mix
+	[
+		"   2222   ",
+		"  233332  ",
+		" 23555532 ",
+		"2355555532",
+		"2355555532",
+		"2355555532",
+		"2355555532",
+		" 23555532 ",
+		"  233332  ",
+		"   2222   "
+	],
 	# Huge 3
 	[
 		"   3333   ",
@@ -193,6 +200,8 @@ func _on_Button_button_up():
 
 
 func init_round():
+	$Gameplay/Minimap.visible = false
+
 	var shape = SHAPES.pop_front()
 	if shape == null:
 		shape = RANDOM_SHAPES[rng.randi_range(0, len(RANDOM_SHAPES)) - 1]
@@ -208,6 +217,7 @@ func init_round():
 
 func start_round():
 	$Gameplay/Timer.start()
+	$Gameplay/Minimap.visible = true
 	$Gameplay/LeftPlayArea.can_act = true
 	$Gameplay/RightPlayArea.can_act = true
 

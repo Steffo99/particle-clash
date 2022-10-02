@@ -5,6 +5,7 @@ var can_act = false
 
 
 func tiles_init(shape, sd):
+	print("Initializing tiles for %s..." % player)
 	$Tiles.set_shape(shape, sd)
 	check_matches()
 
@@ -40,7 +41,6 @@ func cursor_init():
 		while x < len(shape[y]):
 			var new_pos = Vector2(x, y)
 			if not cursor_would_collide(new_pos):
-				print("Found location for cursor @ %d, %d" % [new_pos.x, new_pos.y])
 				set_cursor_pos(new_pos)
 				return
 			x += 1

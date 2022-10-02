@@ -52,6 +52,7 @@ stream = ExtResource( 8 )
 bus = "Music"
 
 [node name="Minimap" type="Node2D" parent="."]
+visible = false
 position = Vector2( 0, 16 )
 
 [node name="Left" type="Sprite" parent="Minimap"]

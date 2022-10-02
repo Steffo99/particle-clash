@@ -20,10 +20,8 @@ var size
 var atoms = []
 
 
-var rng
-
-
 func set_shape(val, sd):
+	var new_shape = [] + val
 	var new_size = len(val)
 	var rescale_to = clamp(6 / float(new_size), 0, 1)
 
@@ -31,13 +29,13 @@ func set_shape(val, sd):
 	for atom in $Atoms.get_children():
 		atom.queue_free()
 
-	rng = RandomNumberGenerator.new()
+	var rng = RandomNumberGenerator.new()
 	rng.set_seed(sd)
 
 	atoms = []
 	var offset = new_size / 2
 	var y = - offset
-	for row in val:
+	for row in new_shape:
 		var atoms_row = []
 		var x = - offset
 		for col in row:
@@ -45,11 +43,11 @@ func set_shape(val, sd):
 				set_cell(x, y, 0)
 				var atom = ATOM.instance()
 				var random_amount = int(col)
-				if random_amount > 0:
+				if random_amount > 1:
 					var keys = COLORS.keys()
-					col = keys[rng.randi() % min(len(keys), random_amount)]
-				val[y+offset][x+offset] = col
-				atom.self_modulate = COLORS[col]
+					var index = rng.randi() % min(len(keys), random_amount)
+					new_shape[y+offset][x+offset] = keys[index]
+				atom.self_modulate = COLORS[new_shape[y+offset][x+offset]]
 				atom.position = Vector2(x * TILE_SIZE + TILE_OFFSET, y * TILE_SIZE + TILE_OFFSET)
 				$Atoms.add_child(atom)
 				atoms_row.append(atom)
@@ -60,5 +58,5 @@ func set_shape(val, sd):
 		y += 1
 
 	size = new_size
-	shape = val
+	shape = new_shape
 	scale = Vector2(rescale_to, rescale_to)
