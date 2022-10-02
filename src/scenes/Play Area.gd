@@ -161,8 +161,3 @@ func _process(_delta):
 		cursor_left()
 	if Input.is_action_just_pressed(player + "_rotate"):
 		cursor_rotate()
-
-
-func _ready():
-	tiles_init()
-	cursor_init()
