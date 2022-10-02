@@ -10,7 +10,7 @@ jobs:
     name: "Build game"
     runs-on: ubuntu-latest
     container:
-      image: "barichello/godot-ci:3.5.1"
+      image: "barichello/godot-ci:3.4.4"
 
     strategy:
       matrix:
@@ -29,20 +29,18 @@ jobs:
       - name: "⚙️ Setup Godot templates"
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/3.5.1.stable ~/.local/share/godot/templates/3.5.1.stable
+          mv /root/.local/share/godot/templates/3.4.4.stable ~/.local/share/godot/templates/3.4.4.stable
       
       - name: "⚙️ Setup Godot build directories"
         run: |
-          mkdir -v -p export/${{ matrix.target }}/LD51/
+          mkdir -v -p export/${{ matrix.target }}/LD50/
           
       - name: "🏗️ Build game"
         run: |
           godot -v --export "${{ matrix.target }}"
 
-      - name: "🌐 Create release"
-        uses: ncipollo/release-action@v1.10.0
+      - name: "⬆️ Upload artifact"
+        uses: actions/upload-artifact@v1
         with:
-          artifactErrorsFailBuild: true
-          artifacts: export/${{ matrix.target }}/*
-          draft: true
-          generateReleaseNotes: true
+          name: "${{ matrix.target }}"
+          path: "export/${{ matrix.target }}"
