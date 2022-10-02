@@ -33,7 +33,7 @@ jobs:
       
       - name: "⚙️ Setup Godot build directories"
         run: |
-          mkdir -v -p export/${{ matrix.target }}/LD50/
+          mkdir -v -p export/${{ matrix.target }}/LD51/
           
       - name: "🏗️ Build game"
         run: |
