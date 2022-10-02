@@ -17,7 +17,7 @@ _A match-4 game for two players about particles about to collide_
 
 Two particles will collide **every 10 seconds**, and only one of them may survive.
 
-**Twist** the matter inside to create colored lines of **4 or more subparticles of the same color** to strengthen your particle, and prepare for the crash: the strongest particle wins the round!
+**Twist** the matter inside to create colored lines of **4 or more subparticles of the same color**, strengthening your particle, and prepare for the crash: the strongest particle wins the round!
 
 ### Requirements
 
