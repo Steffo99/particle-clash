@@ -10,7 +10,7 @@ jobs:
     name: "Build game"
     runs-on: ubuntu-latest
     container:
-      image: "barichello/godot-ci:3.4.4"
+      image: "barichello/godot-ci:3.5.1"
 
     strategy:
       matrix:
@@ -29,7 +29,7 @@ jobs:
       - name: "⚙️ Setup Godot templates"
         run: |
           mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/3.4.4.stable ~/.local/share/godot/templates/3.4.4.stable
+          mv /root/.local/share/godot/templates/3.5.1.stable ~/.local/share/godot/templates/3.5.1.stable
       
       - name: "⚙️ Setup Godot build directories"
         run: |
