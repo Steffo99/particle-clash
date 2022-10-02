@@ -1,9 +1,9 @@
 name: "Build game release"
 
-on: 
-  release:
-    types:
-      - published
+on:
+  push: 
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -39,8 +39,10 @@ jobs:
         run: |
           godot -v --export "${{ matrix.target }}"
 
-      - name: "⬆️ Upload artifact"
-        uses: actions/upload-artifact@v1
+      - name: "🌐 Create release"
+        uses: ncipollo/release-action@v1.10.0
         with:
-          name: "${{ matrix.target }}"
-          path: "export/${{ matrix.target }}"
+          artifactErrorsFailBuild: true
+          artifacts: export/${{ matrix.target }}/*
+          draft: true
+          generateReleaseNotes: true
