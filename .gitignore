@@ -1,5 +1,5 @@
 # Don't commit builds, but commit the directories!
-/export/*/*
+/export
 !/export/*/.gitkeep
 
 ## Godot.gitignore

@@ -204,6 +204,7 @@ tracks/0/keys = {
 script = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
 position = Vector2( 800, 450 )
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
