@@ -15,7 +15,39 @@ _A match-4 game for two players about particles about to collide_
 
 ## About
 
-TODO
+Two particles will collide **every 10 seconds**, and only one of them may survive.
+
+**Twist** the matter inside to create colored lines of **4 or more subparticles of the same color** to strengthen your particle, and prepare for the crash: the strongest particle wins the round!
+
+## Requirements
+
+This game requires:
+
+- A screen with a resolution of **1600x900 pixels or greater** 
+- **2 local players** _(call a friend and play together!)_
+- **full color vision** _(sorry color blind friends...)_
+
+### Screenshot
+
+![Screenshot of the first level with the default colors](media/screenshot-1.png "Screenshot of the first level with the default colors")
+
+## Controls
+
+### Player 1
+
+- \[**W**\] \[**A**\] \[**S**\] \[**D**\] - Move
+- \[**Space**\] - Rotate clockwise
+
+### Player 2
+
+- \[**↑**\] \[**←**\] \[**↓**\] \[**→**\] - Move
+- \[**Enter**\] - Rotate clockwise
+
+### Common
+
+- **Mouse** - Select options on the menu
+- **`M`** - Mute music
+- **`N`** - Mute sounds
 
 ## Credits
 
