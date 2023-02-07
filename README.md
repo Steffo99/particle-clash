@@ -4,14 +4,14 @@ _A match-4 game for two players about particles about to collide_
 
 ## Ludum Dare 51: Compo entry
 
-[![Overall: TBD](https://img.shields.io/badge/overall-TBD-lightgrey) 
-![Fun: TBD](https://img.shields.io/badge/fun-TBD-lightgrey) 
-![Innovation: TBD](https://img.shields.io/badge/innovation-TBD-lightgrey) 
-![Theme: TBD](https://img.shields.io/badge/theme-TBD-lightgrey) 
-![Graphics: TBD](https://img.shields.io/badge/graphics-TBD-lightgrey) 
-![Audio: TBD](https://img.shields.io/badge/audio-TBD-lightgrey) 
-![Humor: TBD](https://img.shields.io/badge/humor-TBD-lightgrey)
-![Mood: TBD](https://img.shields.io/badge/mood-TBD-lightgrey)](https://ldjam.com/events/ludum-dare/51/$303236/)
+[![Overall: 3.4](https://img.shields.io/badge/overall-3.4-yellowgreen) 
+![Fun: 3.2](https://img.shields.io/badge/fun-3.2-yellowgreen) 
+![Innovation: 3.4](https://img.shields.io/badge/innovation-3.4-yellowgreen) 
+![Theme: 3.5](https://img.shields.io/badge/theme-3.5-yellowgreen) 
+![Graphics: 2.9](https://img.shields.io/badge/graphics-2.9-yellow) 
+![Audio: 3.0](https://img.shields.io/badge/audio-3.0-yellowgreen) 
+![Humor: 2.3](https://img.shields.io/badge/humor-2.3-yellow)
+![Mood: 2.9](https://img.shields.io/badge/mood-2.9-yellow)](https://ldjam.com/events/ludum-dare/51/$303236/)
 
 ## About
 
